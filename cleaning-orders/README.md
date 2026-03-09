@@ -1,7 +1,7 @@
 # 🧹 Cleaning Supplies Order Management System
-### Built for FACTOTUM SERVICES PVT. LTD.
+### Built for SHASHI ENTERPRISES
 
-A full MERN stack web application replacing your Google Form — with MongoDB database storage, automatic email notifications, and an admin dashboard.
+A full MERN stack web application replacing manual orders — with MongoDB database storage, automatic email notifications, and an admin dashboard.
 
 ---
 
