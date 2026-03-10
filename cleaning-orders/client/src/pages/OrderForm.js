@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { COMPANY, STORES, PRODUCTS, CATEGORIES } from '../config';
+import { COMPANY, STORES, PRODUCTS, CATEGORIES, API_URL } from '../config';
 import './OrderForm.css';
 
 export default function OrderForm() {
@@ -66,7 +66,7 @@ export default function OrderForm() {
 
     setLoading(true);
     try {
-      const res = await axios.post('/api/orders', {
+      const res = await axios.post(`${API_URL}/api/orders`, {
         store: storeVal,
         items,
         otherItems: form.otherItems,

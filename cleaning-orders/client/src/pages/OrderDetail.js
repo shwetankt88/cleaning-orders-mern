@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { API_URL } from '../config';
 import './Admin.css';
 
 const api = () => axios.create({
+  baseURL: API_URL,
   headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` }
 });
-
 export default function OrderDetail() {
   const { id } = useParams();
   const navigate = useNavigate();

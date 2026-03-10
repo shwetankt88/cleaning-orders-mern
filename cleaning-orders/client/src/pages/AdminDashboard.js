@@ -2,10 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { COMPANY } from '../config';
+import { COMPANY, API_URL } from '../config';
 import './Admin.css';
 
 const api = () => axios.create({
+  baseURL: API_URL,
   headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` }
 });
 

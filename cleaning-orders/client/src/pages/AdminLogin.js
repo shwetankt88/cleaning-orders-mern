@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { COMPANY } from '../config';
+import { COMPANY, API_URL } from '../config';
 import './Admin.css';
 
 export default function AdminLogin() {
@@ -14,7 +14,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('/api/admin/login', form);
+      const res = await axios.post(`${API_URL}/api/admin/login`, form);
       localStorage.setItem('adminToken', res.data.token);
       localStorage.setItem('adminUser', res.data.username);
       navigate('/admin');
